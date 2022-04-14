@@ -1,0 +1,80 @@
+q1.
+package pack1;
+public class A 
+{
+   private int x = 50;	
+   protected int y = 100;
+    int z = 200;
+}
+package pack2;
+import pack1.A;
+public class B extends A {
+
+}
+import pack2.B;
+public class Test {
+public static void main(String[] args) 
+{
+   B b = new B();
+   System.out.println(b.x);
+
+   System.out.println(b.y);
+   System.out.println(b.z);
+  }
+}
+
+
+Answer: 
+ Compile time error
+
+
+
+q2.
+class A
+{
+    {
+        System.out.println(1);
+    }
+}
+class B extends A
+{
+    {
+        System.out.println(2);
+    }
+}
+
+class C extends B
+{
+    {
+        System.out.println(3);
+    }
+} 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        C c = new C();
+    }
+}
+
+answer: 1
+2
+3
+
+
+q3.
+public class Baz extends Foo, Bar{
+
+int n = 50;
+int m = 10;
+
+ public static void main(String[] args)
+    {
+        Foo p = new Bar();
+
+        System.out.println(p.n);
+    }
+
+}
+
+answer: compile time error
